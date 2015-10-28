@@ -87,5 +87,39 @@ describe('TodoCtrl', function() {
         expect(window.scrollX).toBe(0);
         expect(window.scrollY).toBe(0);
       });
+	  
+	   it('watchCollection', function() {	//line50
+        var ctrl = controller('TodoCtrl', {
+          $scope: scope,
+        });
+
+        scope.todos=[{
+          wholeMsg: 'COMP3111 I love Kim Sung',
+          head: ' ',
+          headLastChar: ' ',
+          desc: ' ',
+          linkedDesc: ' ',
+          completed: true,	//set true
+          timestamp: new Date().getTime(),
+          tags: "...",
+          echo: 1,
+          order: 1
+        }, 
+		{},
+		{
+          wholeMsg: 'COMP3111',
+          head: ' ',
+          headLastChar: ' ',
+          desc: ' ',
+          linkedDesc: ' ',
+          completed: false,	//set false
+          timestamp: new Date().getTime(),
+          tags: "...",
+          echo: 2,
+          order: 2
+        }];
+      scope.$digest();
+      });
+	  
     });
   });

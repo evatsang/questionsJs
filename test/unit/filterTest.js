@@ -1,82 +1,18 @@
 'use strict';
 
 var questionList=[{
-  wholeMsg: "newTodo",
-  head: "head",
-  headLastChar: "?",
-  desc: "desc",
-  linkedDesc: "linkedDesc",
-  completed: false,
-  timestamp: 0,
-  tags: "...",
-  echo: 3,
-  order: 3
-},{
-  wholeMsg: "newTodo",
-  head: "head",
-  headLastChar: "?",
-  desc: "desc",
-  linkedDesc: "linkedDesc",
-  completed: false,
-  timestamp: 0,
-  tags: "...",
-  echo: 2,
-  order: 4
-},{
-  wholeMsg: "newTodo",
-  head: "head",
-  headLastChar: "?",
-  desc: "desc",
-  linkedDesc: "linkedDesc",
-  completed: false,
-  timestamp: 0,
-  tags: "...",
-  echo: 2,
-  order: 5
-},{
-  wholeMsg: "newTodo",
-  head: "head",
-  headLastChar: "?",
-  desc: "desc",
-  linkedDesc: "linkedDesc",
-  completed: false,
-  timestamp: 0,
-  tags: "...",
-  echo: 2,
-  order: 6
-},{
-  wholeMsg: "newTodo",
-  head: "head",
-  headLastChar: "?",
-  desc: "desc",
-  linkedDesc: "linkedDesc",
-  completed: false,
-  timestamp: new Date().getTime(), //new
-  tags: "...",
-  echo: 2,
-  order: 0
-},{
-  wholeMsg: "newTodo",
-  head: "head",
-  headLastChar: "?",
-  desc: "desc",
-  linkedDesc: "linkedDesc",
-  completed: false,
-  timestamp: new Date().getTime()-1, //new
-  tags: "...",
-  echo: 0,
-  order: 2
-},{
-  wholeMsg: "newTodo",
-  head: "head",
-  headLastChar: "?",
-  desc: "desc",
-  linkedDesc: "linkedDesc",
-  completed: false,
-  timestamp: new Date().getTime(), // latest
-  tags: "...",
-  echo: 0,
-  order: 1
+ wholeMsg: newTodo,
+ head: title,
+ headLastChar: title.slice(-1),
+ desc: 0,
+ linkedDesc: Autolinker.link(newTodo, {newWindow: false, stripPrefix: false}),
+ completed: false,
+ timestamp: new Date().getTime(),
+ tags: "...",
+ echo: 0,
+ dislike: 0,
+ order: 0,
+ latest: true
 }];
 
 describe('TodoCtrl', function() {
